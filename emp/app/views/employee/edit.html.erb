@@ -1,0 +1,22 @@
+<h1>Edit employee</h1>
+
+<%=  form_with model: @Employee, url: employee_path, method: :post, local: true do |form| %>
+  <div>
+    <%= form.label :first_name %> <br>
+    <%= form.text_field :first_name,value: @employee.first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %> <br>
+    <%= form.text_field :last_name,value: @employee.last_name %>
+  </div>
+
+  <div>
+    <%= form.label :email %> <br>
+    <%= form.email_field :email,value: @employee.email %>
+  </div>
+  <div>
+        <%= form.submit %>
+</div>
+  
+<% end %>
