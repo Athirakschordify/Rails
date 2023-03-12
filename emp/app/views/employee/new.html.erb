@@ -1,6 +1,8 @@
 <h1>New employee</h1>
 
 <%=  form_with scope: Employee.new, url: employee_index_path, method: :post, local: true do |form| %>
+
+
   <div>
     <%= form.label :first_name %> <br>
     <%= form.text_field :first_name %>
