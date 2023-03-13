@@ -9,6 +9,7 @@
 		<th>AGE &nbsp; &nbsp; &nbsp; </th>
 		<th>COUNTRY &nbsp; &nbsp; &nbsp; </th>
 		<th>LANGUAGES KNOWN &nbsp; &nbsp; &nbsp; </th>
+		<th>IMAGES &nbsp; &nbsp; &nbsp; </th>
 
 
 
@@ -21,21 +22,14 @@
 
     		<td> <%= emp.first_name %> </td>
     		<td> <%= emp.last_name %> </td>
-    		 <td> <%= emp.email %> </td>
-    		  <td> <%= emp.age %> </td>
-    		  <td> <%= emp.country %> </td>
-    		   <td> <%= emp.languages_known %> </td>
-
-
-
-
-
-
-
-
-    		 <td> <%= link_to 'View', emp %>&nbsp; &nbsp; &nbsp;</td>
-    		 <td> <%= link_to 'Edit', edit_employee_path(emp) %>&nbsp; &nbsp; &nbsp;</td>
-             <td><%= link_to 'Delete', emp, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>&nbsp; &nbsp; &nbsp;</td>
+    		<td> <%= emp.email %> </td>
+    		<td> <%= emp.age %> </td>
+    		<td> <%= emp.country %> </td>
+    	    <td> <%= emp.languages_known %> </td>
+    	    <td><img width="50" height="50" src="<%= (url_for(emp.image.url)) %>"></td>
+    		<td> <%= link_to 'View', emp %>&nbsp; &nbsp; &nbsp;</td>
+    		<td> <%= link_to 'Edit', edit_employee_path(emp) %>&nbsp; &nbsp; &nbsp;</td>
+            <td><%= link_to 'Delete', emp, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>&nbsp; &nbsp; &nbsp;</td>
 
 
     	</tr>

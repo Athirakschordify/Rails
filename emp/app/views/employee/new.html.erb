@@ -1,6 +1,6 @@
 <h1>New employee</h1>
 
-<%=  form_with scope: Employee.new, url: employee_index_path,mutiport:true, method: :post, local: true do |form| %>
+<%=  form_with scope: Employee.new, url: employee_index_path, method: :post, multipart: true,local: true do |form| %>
 
 
   <div>
@@ -25,12 +25,20 @@
    <%= form.radio_button :age, '31 - 60'%>31 - 60<br>
    <%= form.radio_button :age, '61 - 100'%>61 - 100<br>
  </div>
+ <br>
  
  <div>
   <%= form.label :country %>:</b>
     <%= form.select :country, ['India', 'Australia', 'United Kingdom','United States'] %>
  </div>
+ <br>
+  <div>
+      <%= form.label :image %>:</b>
 
+    <%= form.file_field :image %>
+
+   </div> 
+   <br>
    
  <div>
 
@@ -40,6 +48,11 @@
       <%= l %>  
     <% end %>
    <div>
+
+
+
+
+
 
 
   <br>

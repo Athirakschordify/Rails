@@ -28,6 +28,15 @@
   <%= form.label :country %>:</b>
     <%= form.select :country, ['India', 'Australia', 'United Kingdom','United States'],selected: (@employee.country) %>
  </div>
+   <div>
+      <%= form.label :image %>:</b>
+
+    <%= form.file_field :image ,value:@employee.image %>
+
+   </div> 
+
+
+
  <div>
 
     <%= form.label :languages_known %>:</b>

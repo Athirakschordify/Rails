@@ -4,6 +4,8 @@ class  Employee < ApplicationRecord
     validates :email, presence: true
     validates:age,presence: true
     validates:languages_known,presence: true
+    mount_uploader :image, AvatarUploader
+
 
 
 end
