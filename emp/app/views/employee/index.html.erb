@@ -1,22 +1,41 @@
-<h1>listing employees</h1>
+<h2>LISTING EMPLOYEES</h1>
 <table>
 	<thead>
 		<tr>
-		<th>first name</th>
-		<th>last name</th>
-		<th>email</th>
+
+		<th>FIRST NAME &nbsp; &nbsp; &nbsp;</th>
+		<th>LAST NAME &nbsp; &nbsp; &nbsp;</th>
+		<th>EMAIL ID &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+		<th>AGE &nbsp; &nbsp; &nbsp; </th>
+		<th>COUNTRY &nbsp; &nbsp; &nbsp; </th>
+		<th>LANGUAGES KNOWN &nbsp; &nbsp; &nbsp; </th>
+
+
+
         </tr>
 	</thead>
 
     <tbody>
     	<% @employee.each do |emp| %>
     	<tr>
+
     		<td> <%= emp.first_name %> </td>
     		<td> <%= emp.last_name %> </td>
     		 <td> <%= emp.email %> </td>
-    		 <td> <%= link_to 'View', emp %></td>
-    		 <td> <%= link_to 'Edit', edit_employee_path(emp) %></td>
-             <td><%= link_to 'Delete', emp, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %></td>
+    		  <td> <%= emp.age %> </td>
+    		  <td> <%= emp.country %> </td>
+    		   <td> <%= emp.languages_known %> </td>
+
+
+
+
+
+
+
+
+    		 <td> <%= link_to 'View', emp %>&nbsp; &nbsp; &nbsp;</td>
+    		 <td> <%= link_to 'Edit', edit_employee_path(emp) %>&nbsp; &nbsp; &nbsp;</td>
+             <td><%= link_to 'Delete', emp, method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>&nbsp; &nbsp; &nbsp;</td>
 
 
     	</tr>
@@ -24,6 +43,8 @@
 
     </tbody>
     <%= link_to 'Add New Employee', new_employee_path %>
+    <br>
+		<br>
 
 
 
