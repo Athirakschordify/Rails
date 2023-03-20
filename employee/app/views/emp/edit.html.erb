@@ -1,0 +1,62 @@
+<h1>Edit Employee</h1>
+
+<%=  form_with scope: Emp.new, url: emp_path, method: :PATCH, local: true do |form| %>
+
+
+  <div>
+    <%= form.label :first_name %> <br>
+    <%= form.text_field :first_name,value: @employee.first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %> <br>
+    <%= form.text_field :last_name,value: @employee.last_name %>
+  </div>
+
+  <div>
+    <%= form.label :email %> <br>
+    <%= form.email_field :email ,value: @employee.email %>
+  </div>
+  <div>
+    <%= form.label :age %> <br>
+   <%= form.radio_button :age, '0 - 30 ',value: @employee.age %>0 - 30 <br>
+   <%= form.radio_button :age, '31 - 60',value: @employee.age %>31 - 60<br>
+   <%= form.radio_button :age, '61 - 100',value: @employee.age %>61 - 100<br>
+ </div>
+ 
+ <div>
+  <%= form.label :country %>:</b>
+    <%= form.select :country, ['India', 'Australia', 'United Kingdom','United States'],selected: (@employee.country) %>
+ </div>
+   <div>
+      <%= form.label :image %>:</b>
+
+    <%= form.file_field :image ,value:@employee.image %>
+
+   </div> 
+
+
+
+ <div>
+
+    <%= form.label :languages_known %>:</b>
+    <% ['English', 'Hindi', 'Malayalam'].each do |l| %>
+   
+    <%= form.check_box :languages_known, { multiple: true, checked: (@employee.languages_known&.include?(l)) }, l %>
+
+      <%= l %>  
+    <% end %>
+   <div>
+    <br>
+
+  
+  <div>
+        <%= form.submit %>
+</div>
+<br>
+
+
+<%= link_to 'Back', emp_index_path%>
+
+  
+<% end %>
