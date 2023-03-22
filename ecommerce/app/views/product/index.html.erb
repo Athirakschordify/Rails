@@ -1,0 +1,31 @@
+
+<% if customer_signed_in? %>
+
+<h1>customer page<h1>
+<table>
+      <thead>
+            <tr>
+
+            <th>PRODUCT NAME &nbsp; &nbsp; &nbsp;</th>
+            <th>QUANTITY &nbsp; &nbsp; &nbsp;</th>
+            <th>PRICE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</th>
+        </tr>
+      </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+      <tr>
+
+            <td> <%= product.product_name %> </td>
+            <td> <%= product.quantity %> </td>
+            <td> <%= product.price %> </td>
+            <td> <%= link_to 'View',product_path(product) %> </td>        
+      </tr>
+      <%end %>
+
+    </tbody>
+
+
+
+</table>
+<% end %>

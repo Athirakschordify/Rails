@@ -1,0 +1,29 @@
+<br>
+<br>
+<table>
+	<thead>
+	<tr>
+		<th>PRODUCT NAME </th>
+		<th>PRODUCT QUANTITY</th>
+
+    </tr>
+	</thead>
+	<tr>
+		<td> <%= @sale.product.product_name %> </td>
+	    <td><%= @sale.quantity%></td>
+
+	</tr>	
+	<tr>
+<td> <%= button_to 'Pay',sale_index_path(product_id: @sale.product.id, status: 'completed') %> </td>
+<td> <%= button_to 'Cancel',sale_index_path(product_id: @sale.product.id, status: 'failed') %> </td>
+
+	    <td><p> <%= link_to 'Back',product_index_path %> </p></td>
+
+
+	</tr>
+	
+
+	
+</table>
+
+

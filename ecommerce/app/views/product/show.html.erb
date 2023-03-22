@@ -1,0 +1,7 @@
+<h1>show item</h1>
+<p><b>product name</b></p><%= @products.product_name %>
+<p><b>product quantity</b></p><%= @products.quantity %>
+<p><b>product price</b></p><%= @products.price %>
+<p> <%= link_to 'Back',product_index_path %> </p>
+
+<%= link_to 'Buy' , sale_index_path(product_id: @products.id, price: @products.price, quantity: 1)  %>
