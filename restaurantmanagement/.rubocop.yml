@@ -1,0 +1,7 @@
+AllCops:
+ TargetRubyVersion: 3.0.0
+ DisplayCopNames: true
+Style/Documentation:
+ Enabled: false
+Style/ClassAndModuleChildren:
+ Enabled: false
