@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+   <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+   <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+</head>
+<body>
+<table id="restaurant" >
+<thead>
+<tr>
+<th>Restaurant Name</th>
+<th>Address</th>
+<th>Email</th>
+<th>Contact Number</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</body>
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+ $('#restaurant').DataTable({
+
+
+ ajax: {
+
+ type: 'GET',
+
+url: "http://127.0.0.1:3000/api/v1/restaurantmanagements",
+headers: {"Authorization": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2ODAzMjYzNjZ9.Zlzfo6i37WHJ2hSgBGuC1oUWrPOqLCfo5SuyW7y7hVU"},
+ dataType: "json",
+
+dataSrc: ""
+ },
+columns: [
+{data: "restaurant_name"},
+{data: "address"},
+{data: "email"},
+{data: "contact_no"}
+
+ ]
+});
+});
+</script>
+</html>
+
+
