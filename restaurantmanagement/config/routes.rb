@@ -10,6 +10,15 @@ Rails.application.routes.draw do
   namespace :api do 
     namespace :v1 do
      resources :restaurantmanagements
+     resources :foods
+     resources :foodrestaurants
+     resources :carts
+     get '/user_cart', to: 'carts#user_cart'
+     resources :cartdetails
+     resources :orders
+     resources :orderdetails
+     resources :showcarts
+
     end 
   end 
   

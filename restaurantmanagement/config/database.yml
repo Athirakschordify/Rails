@@ -14,7 +14,7 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  database: restaurant_management
+  database: restaurant_data
   username: postgres
   password: postgres
   host: localhost

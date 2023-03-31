@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Restaurantmanagement.create({ restaurant_name: 'Garden Grille Restaurant', address: 'Punnen Road Hilton Garden Inn Trivandrum, Thiruvananthapuram (Trivandrum) 695039 India', email: 'ggr@gmail.com', contact_no: 8765453543 })
-Restaurantmanagement.create({ restaurant_name: 'Zam Zam Restaurant', address: 'VJT University Road Opposite MLA Hostel, Palayam, Thiruvananthapuram (Trivandrum) 695034 India', email: 'zzr@gmail.com', contact_no: 8765678576  })
+#Restaurantmanagement.create({ restaurant_name: 'Garden Grille Restaurant', address: 'Punnen Road Hilton Garden Inn Trivandrum, Thiruvananthapuram (Trivandrum) 695039 India', email: 'ggr@gmail.com', contact_no: 8765453543 })
+#Restaurantmanagement.create({ restaurant_name: 'Zam Zam Restaurant', address: 'VJT University Road Opposite MLA Hostel, Palayam, Thiruvananthapuram (Trivandrum) 695034 India', email: 'zzr@gmail.com', contact_no: 8765678576  })
+
+#food = Foodrestaurant.create({ restaurantmanagement_id: 3, food_id: 1  })
+Cart.create({ user_id: '1', foodrestaurant_id: '1'  })
+#binding.pry
 

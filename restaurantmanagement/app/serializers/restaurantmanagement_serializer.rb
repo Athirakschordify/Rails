@@ -1,3 +1,3 @@
 class RestaurantmanagementSerializer < ActiveModel::Serializer
-  attributes :restaurant_name
+  attributes :restaurant_name, :address, :email, :contact_no
 end

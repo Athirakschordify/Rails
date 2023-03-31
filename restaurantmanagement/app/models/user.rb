@@ -6,4 +6,7 @@ class User < ApplicationRecord
   validates :password,
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
+  has_one :cart
+  has_many :restaurantmanagements, through: :carts 
+  has_many :orders            
 end

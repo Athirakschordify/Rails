@@ -18,7 +18,7 @@ class Api::V1::RestaurantmanagementsController < ApplicationController
     if restaurant.save
       render json: { message: restaurant }, status: :created
     else
-      render json: { error: 'Error for creating' }
+      render json: { error: restaurant.errors }, status: 400
     end
   end
 
@@ -43,6 +43,6 @@ class Api::V1::RestaurantmanagementsController < ApplicationController
   end
 
   def restaurant_params
-    params.require(:restaurantmanagement).permit(:restaurant_name, :address, :email, :contact_no)
+    params.permit(:restaurant_name, :address, :email, :contact_no)
   end
 end
