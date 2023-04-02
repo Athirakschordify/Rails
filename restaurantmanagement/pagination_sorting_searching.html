@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+</head>  
+<body>  
+  <table id="restaurant">
+    <thead>
+      <tr>
+        <th>Restaurant Name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+
+  </table>
+</body>  
+<script type="text/javascript">
+jQuery('#restaurant').DataTable({
+    "processing": true,
+    "serverSide": true,
+    "ordering": true,
+    "searching": true,
+    "ajax": {
+      "data": function(){
+        var info = jQuery('#restaurant').DataTable().page.info();
+        jQuery('#restaurant').DataTable().ajax.url(
+          "http://127.0.0.1:3000/api/v1/restaurantmanagements?page="+(info.page + 1)
+        );
+     },
+     
+      "type": "GET",  
+      "dataType": "JSON"
+    },
+    "dataSrc": "",
+    "columns": [
+        { "data": "restaurant_name" },
+        { "data": "address" },
+        { "data": "email" },
+        { "data": "contact_no" }
+      ]
+  });
+
+</script>  
+</html>
